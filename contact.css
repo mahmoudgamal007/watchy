@@ -1,0 +1,95 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+.bigform
+{
+     /* border: 2px solid blue;  */
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+.contactinfo
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    min-height:inherit;
+    padding: 30px;
+    padding-bottom: 50px;
+    background-color:#f44336;
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.1);
+}
+.contactinfo a
+{
+    font-size: 40px;
+    text-decoration: none;
+    color: white;
+}
+.contactinfo a #whatsapp:hover{
+ color: rgb(64, 175, 24);
+ transition: 1s;
+}
+.contactinfo a #messanger:hover{
+    color: rgb(0, 170, 255);
+    transition: 1s;
+   }
+   .contactinfo a #location:hover{
+    color: rgb(210, 39, 39);
+    transition: 1s;
+   }
+
+   /* #fullname:focus
+   {
+    padding: 20px;
+    transition: .5s;
+   } */
+  
+
+.contactusform
+{
+    font-size: large;
+}
+.form{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:center;
+    max-width: 40%;
+    /* transform: translate(75%,10%); */
+    min-height:inherit;
+    padding: 30px;
+    padding-bottom: 50px;
+    border-radius: 0 20px 20px 0;
+    background-color: rgb(255, 255, 255 , .3);
+    box-shadow: 0 0 20px 1px rgba(0,0,0,0.1);
+
+}
+.form  .label
+{
+    display: block;
+    text-align: left;
+}
+.inputfield
+{
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255 , .5);
+}
+.mybtn
+{
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: #f44336;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

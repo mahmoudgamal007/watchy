@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>watchy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="project.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+        
+    </head>
+    <body>
+<div class="grid-container">
+    <section class="head">  
+        <nav>
+            
+            <a href="login/index.html" target="_blank" class="signin">sign in</a>
+            <div class="navlinks">
+                <ul>
+                    <li class="list">
+                        <a href="">
+                            <span class="icon"><ion-icon name="cart-outline"></ion-icon></span>
+                            <span class="text" id="carttext"></span>
+                        </a>
+                    <li class="list">
+                        <a href="project.html">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="text">Home</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="info.html" target="_blank">
+                            <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+                            <span class="text">ABOUT</span>
+                        </a>
+                    </li>
+                    <li class="list">
+                        <a href="contact.html" target="_blank">
+                            <span class="iconcontact"><ion-icon name="chatbubble-outline"></ion-icon></span>
+                            <span class="text">CONTACT US</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </nav>
+    <div class="maincontent">
+        <h1>Unlimited Movies, TV shows<br> And more</h1>
+    </div>
+    </section>
+    <!-- end of header of the page and start of the slider -->
+    <div class="slider">
+    <div class="sidetext">
+        <div class="text">
+            <h3>Popular right now.</h3>
+            <p>Enjoy watching from the comfort of your home.<br>
+            Watch on TVs, Mobile phone, PCs and more.</p>
+        </div>
+    </div>
+    
+    <div class="slideimg">
+        <div class="stopslide"  onmouseover="stop()" onmouseleave="goon()" ></div>
+        <img src="assets/slider_images/tv.png" style="z-index: 1;" id="tvimg">
+        <div class="images">
+        <img  name="img" id="slidingimage">
+        </div>
+        <div class="btns">
+            <button class="btn" id="1" onclick="showone()" onmouseenter="stop()" onmouseleave="goon()"></button>
+            <button class="btn" id="2" onclick="showtwo()" onmouseenter="stop()" onmouseleave="goon()"></button>
+            <button class="btn" id="3" onclick="showthree()" onmouseenter="stop()" onmouseleave="goon()"></button>
+            <button class="btn" id="4" onclick="showfour()" onmouseenter="stop()" onmouseleave="goon()"></button>
+            <button class="btn" id="5" onclick="showfive()" onmouseenter="stop()" onmouseleave="goon()"></button>
+        </div>
+    </div>
+    
+    </div>  
+    <!-- end of the slider part and beggining of main  -->
+    <div class="main" id="subscribe"> 
+        <div class="maintext">
+            <h2 style="color: #f44336;">Subscribe now with few steps</h2>
+            <p>Easiest way to subscribe to your favourite streaming services<br> and gain access to a varity of content</p>
+        </div>
+        <div class="subscribe" >
+            <span class="createaccount">
+                <ion-icon name="person-circle-outline" style="width:100px ; height: 100px; color: gray;"></ion-icon>
+                <h3 style="color:#f44336 ;">Create your account</h3>
+                <p>Enter your email or mobile number & set<br> your password.</p>
+            </span>
+            <span class="payment">
+                <ion-icon name="card-outline" style="width:100px ; height: 100px; color: gray;"></ion-icon>
+                <h3 style="color:#f44336 ;">Choose a payment method</h3>
+                <p>Choose a payment method of<br> your preference</p>
+            </span>
+            <span class="payment">
+                <ion-icon name="tv-outline" style="width:100px ; height: 100px; color: gray;"></ion-icon>
+                <h3 style="color:#f44336 ;">Choose services.</h3>
+                <p>Choose between all your favourite<br> streaming services.</p>
+            </span>
+            <span class="payment">
+                <ion-icon name="fast-food-outline" style="width:100px ; height: 100px; color: gray;"></ion-icon>
+                <h3 style="color:#f44336 ;">Enjoy watching</h3>
+                <p>Watch all your favourite shows from the comfort<br>of your home.</p>
+            </span>
+        </div>
+    </div> 
+    <!-- end of subscribe main part and start of movies part -->
+    <div class="movies swiper mySwiper" id="movies" >
+        <div class="buttontype">
+            <ul>
+                <li class="listchannel">
+                    <div class="channels">
+                        <div class="icon"><ion-icon name="add-circle-outline" style="width:100px ; height: 100px; color: #f44336; cursor: pointer;"
+                            onclick="showchannels()"></ion-icon></div>
+                        <div class="text" style="font-family:'Alumni Sans Pinstripe', sans-serif ;">Add service.</div>
+                    </div>
+                    
+                </li>
+                <li class="listmovies">
+                    <div class="watchmovies">
+                        <div class="icon"><ion-icon name="videocam-outline" style="width:100px ; height: 100px; color: #f44336;cursor: pointer;"
+                            onclick="showmovies()" ></ion-icon></div>
+                        <div class="text" style="font-family:'Alumni Sans Pinstripe', sans-serif ;">Movies.</div>
+                    </div>
+                </li>
+                
+            </ul>
+            
+        </div>
+        <div class="channellist" id="channelslist">
+            <img src="assets/movies images/netflix.png" alt="netflix" width="200px" height="200px" onclick="addtocart()" style="cursor:pointer; margin: 3px;">
+            <img src="assets/movies images/shahid.png" alt="shahid"  onclick="addtocart()" style="cursor:pointer ; margin: 3px;">
+            <img src="assets/movies images/hboblack.png" alt="hbo" width="200px" height="200px" onclick="addtocart()" style="cursor:pointer ; margin: 3px;">
+            <img src="assets/movies images/osn.png" alt="osn"  onclick="addtocart()" style="cursor:pointer ;">
+            <img src="assets/movies images/disney.png" alt="dinsey" width="200px" height="200px" onclick="addtocart()" style="cursor:pointer ; margin: 3px;">
+            <img src="assets/movies images/watchit.png" alt="watchit" onclick="addtocart()" style="cursor:pointer ;">
+            
+        </div>
+        <div class="movielist swiper-wrapper" id="movielist" >
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/forrestgump.jpeg" alt="forrestgump">
+                </div>
+                <div class="ratingsites">
+                    <a href="https://www.imdb.com/title/tt0109830/?ref_=nv_sr_srsg_0" target="_blank">  <i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i></a>
+                        <a href="https://www.youtube.com/watch?v=bLvqoHBptjg" target="_blank">   <i class="fa-brands fa-youtube" style="font-size: 50px;"></i></a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">forrest gump</span>
+                    <span class="moviedesc">Slow-witted Forrest Gump has 
+                                            never thought of himself<br> as disadvantaged, and thanks 
+                                            to his supportive mother,<br> he leads anything but a restricted life. 
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent" onclick="addtocart()" ><div  id="cartbtn2"  class="cartbtn" >Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/cocojpg.jpg" alt="coco">
+                </div>
+                <div class="ratingsites">
+                   <a href="https://www.imdb.com/title/tt2380307/?ref_=fn_al_tt_1" target="_blank"> <i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i></a>
+                   <a href="https://www.youtube.com/watch?v=Ga6RYejo6Hk" target="_blank">  <i class="fa-brands fa-youtube" style="font-size: 50px;"></i></a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">Coco</span>
+                    <span class="moviedesc">Aspiring musician Miguel, confronted with his family's ancestral ban on music,<br> enters the Land of the Dead to find his great-great-grandfather, a legendary singer.
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent" onclick="addtocart()"><div id="cartbtn1" class="cartbtn" >Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/lalaland.jpg" alt="lala land">
+                </div>
+                <div class="ratingsites">
+                    <a href="https://www.imdb.com/title/tt3783958/?ref_=fn_al_tt_1" target="_blank"> <i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i> </a>
+                        <a href="https://www.youtube.com/watch?v=0pdqf4P9MB8" target="_blank">  <i class="fa-brands fa-youtube" style="font-size: 50px;"></i></a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">Lala Land</span>
+                    <span class="moviedesc">While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future.
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent" ><div id="cartbtn3" class="cartbtn" onclick="addtocart()">Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/ratatouille.jpg" alt="ratatouille">
+                </div>
+                <div class="ratingsites">
+                    <a href="https://www.imdb.com/title/tt0382932/?ref_=nv_sr_srsg_0" target="_blank"> <i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i></a>
+                        <a href="https://www.youtube.com/watch?v=NgsQ8mVkN8w" target="_blank">  <i class="fa-brands fa-youtube" style="font-size: 50px;"></i></a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">Ratatouille</span>
+                    <span class="moviedesc">A rat who can cook makes an unusual alliance with a young kitchen worker at a famous Paris restaurant.
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent" ><div id="cartbtn9"  class="cartbtn" onclick="addtocart()">Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/strangejpg.jpg" alt="dr strange">
+                </div>
+                <div class="ratingsites">
+                    <a href="https://www.imdb.com/title/tt9419884/?ref_=nv_sr_srsg_0" target="_blank">  <i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i></a>
+                        <a href="https://www.youtube.com/watch?v=aWzlQ2N6qqg" target="_blank"> <i class="fa-brands fa-youtube" style="font-size: 50px;"></i></a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">Doctor Strange</span>
+                    <span class="moviedesc">While on a journey of physical and spiritual healing, a brilliant neurosurgeon is drawn into the world of the mystic arts.
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent" ><div id="cartbtn8" class="cartbtn" onclick="addtocart()">Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+           
+
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/goodwill.jpg" alt="goodwillhunting">
+                </div>
+                <div class="ratingsites">
+                    <a href="https://www.imdb.com/title/tt0119217/?ref_=nv_sr_srsg_0" target="_blank">  <i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i></a>
+                        <a href="https://www.youtube.com/watch?v=ReIJ1lbL-Q8" target="_blank">   <i class="fa-brands fa-youtube" style="font-size: 50px;"></i></a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">Good Will Hunting</span>
+                    <span class="moviedesc">Will Hunting, a janitor at M.I.T., has a gift for mathematics, but needs help from a psychologist to find direction in his life.
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent" ><div id="cartbtn7" class="cartbtn" onclick="addtocart()" style="background-color:transparent ;">Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/seperation.jpg" alt="a seperation">
+                </div>
+                <div class="ratingsites">
+                    <a href="https://www.imdb.com/title/tt1832382/?ref_=nv_sr_srsg_0" target="_blank"> <i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i></a>
+                    <a href="https://www.youtube.com/watch?v=58Onuy5USTc" target="_blank"><i class="fa-brands fa-youtube" style="font-size: 50px;"></i></a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">A seperation</span>
+                    <span class="moviedesc">A married couple are faced with a difficult decision - to improve the life of their child by moving to another country or to stay in Iran and look after a deteriorating parent who has Alzheimer's disease.
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent"><div id="cartbtn6" class="cartbtn" onclick="addtocart()">Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+          
+
+
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/intouchables.jpg" alt="the intouchables">
+                </div>
+                <div class="ratingsites">
+                    <a href="https://www.imdb.com/title/tt1675434/?ref_=nv_sr_srsg_0" target="_blank">  <i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i></a>
+                        <a href=" https://www.youtube.com/watch?v=34WIbmXkewU" target="_blank">   <i class="fa-brands fa-youtube" style="font-size: 50px;"></i> </a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">The intouchables</span>
+                    <span class="moviedesc">After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent"><div id="cartbtn5" class="cartbtn" onclick="addtocart()">Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+           <div class="card swiper-slide">
+            <div class="cover"></div>
+            <div class="cardcontent">
+                
+                <div class="movieimg" style="border: 1px solid red;">
+                    <img src="assets/movies images/darkknight.webp" alt="the dark knight">
+                </div>
+                <div class="ratingsites">
+                    <a href="https://www.imdb.com/title/tt0468569/?ref_=nv_sr_srsg_0" target="_blank"><i class="fa-brands fa-imdb" id="imdb" style="font-size: 50px;"></i></a>
+                    <a href="https://www.youtube.com/watch?v=EXeTwQWrcwY" target="_blank">  <i class="fa-brands fa-youtube" style="font-size: 50px;"></i></a>
+                </div>
+                <div class="movieinfo">
+                    <span class="moviename">The dark knight</span>
+                    <span class="moviedesc">When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.
+                                        </span>
+                </div>
+                 <div class="movierating">
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-solid fa-star" style="color:gold ;"></i>
+                    <i class="fa-regular fa-star-half-stroke" style="color: gold;"></i>
+                </div> 
+                <div class="buy">
+                    <button class="rent"><div id="cartbtn4" class="cartbtn" onclick="addtocart()">Rent</div></button>
+                </div>
+            </div>
+           </div>
+
+
+        </div>
+        <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+     
+    </div>
+    <!-- end of movies part going to footer -->
+    
+    <div class="footer" id="footer">
+        <div class="contactus">
+            <p>Got questions? <a href="contact.html" target="_blank">contact us</a></p>
+            <ul class="pagecontent">
+              <li><a href="#movies">our movies</a></li>
+              <li><a href="#subscribe">subscribe steps</a></li>
+            </ul>
+            <div class="copyright">
+                <p>© All copy rights reserved mahmoudgamal@ITI</p>
+                
+            </div>
+        </div>
+        <div class="ourchannels">
+            <p>Streaming services we support</p>
+            <ul>
+                <li><a href="https://www.netflix.com/eg/" target="_blank">Netflix</a></li>
+                <li><a href="https://en.disneyme.com/" target="_blank">Disney +</a></li>
+                <li><a href="https://www.osn.com/ar-eg/home" target="_blank" >OSN</a></li>
+                <li><a href="https://shahid.mbc.net/ar" target="_blank">Shahid</a></li>
+                <li><a href="https://www.watchit.com/#/" target="_blank">Watchit</a></li>
+            </ul>
+        </div>
+        <div class="oursocialmedia">
+            <p>Our social Media accounts</p>
+            <ul>
+                <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" style="font-size:50px ;"></i></a></li>
+                <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram" style="font-size:50px ;"></i></a></li>
+                <li><a href=" https://twitter.com" target="_blank" ><i class="fa-brands fa-twitter" style="font-size:50px ;"></i></a></li>
+            
+            </ul>
+        </div>
+        <div class="goup">
+            <a id="goup" href="#top"><ion-icon name="arrow-up-circle-outline" style="font-size:70px ;"></ion-icon></a>
+            <a href="#top">Back to top</a>
+        </div>
+       
+        
+          
+        
+    </div>
+    
+    
+  </div>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="project.js"></script>
+        
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    slidesPerGroup: 3,
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+    </body>
+
+</html>

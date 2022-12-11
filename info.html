@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>watchy-Info</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="project.css">
+        <link rel="stylesheet" href="contact.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="info.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+        
+    </head>
+    <body onload="resetbox()" >
+        <div class="grid-container" style="min-height: 100vh; margin: 0; gap: 2px;">
+            <section class="head">  
+                <nav>
+                    
+                    <a href="login/index.html" class="signin">sign in</a>
+                    <div class="navlinks">
+                        <ul>
+                            <li class="list" >
+                                <a href="">
+                                    <span class="icon"><i class="fas fa-shopping-cart"></i></span>
+                                    <span class="text" id="carttext2">My cart</span>
+                                </a>
+                            <li class="list">
+                                <a href="project.html">
+                                    <span class="icon"><i class="fa-sharp fa-solid fa-house"></i></ion-icon></span>
+                                    <span class="text">Home</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="info.html">
+                                    <span class="icon"><i class="fas fa-info-circle"></i></span>
+                                    <span class="text">ABOUT</span>
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="contact.html">
+                                    <span class="iconcontact"><i class="fas fa-comment-dots"></i></span>
+                                    <span class="text">CONTACT US</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+                    <div class="infocontent">
+                        <div class="faqs">
+                            <label for="faqlist" style="color:#f44336;"><h1>Frequantly Asked Questions</h1></label>
+                            <select class="faqlist" id="faqlist" onchange="showanswer()">
+                                <option value="none" selected disabled hidden>Select an Option</option>
+                                <option>who are we</option>
+                                <option>what do we offer</option>
+                                <option>How do i subscribe?</option>
+                            </select>
+                            <div class="faqanswer" id="faqanswer"></div>
+                        </div>
+                   
+                    </div>
+                    <div class="imgcontained">
+                        <h3 style="color:#f44336">Available now on the Website</h3>
+                    <div class="circleimages" style="margin-left:10px ;" >
+                       
+                        <img onclick="gohome()" style="width: 100%; height: 100%;" id="infoimg">
+                </div>
+            </div>
+                   
+        
+           
+            </section>
+
+
+            <div class="footer" id="footer" style="margin-top:0 ;">
+                <div class="contactus">
+                    <p>Got questions? <a href="contact.html">contact us</a></p>
+                    <ul class="pagecontent">
+                      <li><a href="#movies">our movies</a></li>
+                      <li><a href="#subscribe">subscribe steps</a></li>
+                    </ul>
+                    <div class="copyright">
+                        <p>© All copy rights reserved mahmoudgamal@ITI</p>
+                        
+                    </div>
+                </div>
+                <div class="ourchannels">
+                    <p>Streaming services we support</p>
+                    <ul>
+                        <li><a href="https://www.netflix.com/eg/" target="_blank">Netflix</a></li>
+                        <li><a href="https://en.disneyme.com/" target="_blank">Disney +</a></li>
+                        <li><a href="https://www.osn.com/ar-eg/home" target="_blank" >OSN</a></li>
+                        <li><a href="https://shahid.mbc.net/ar" target="_blank">Shahid</a></li>
+                        <li><a href="https://www.watchit.com/#/" target="_blank">Watchit</a></li>
+                    </ul>
+                </div>
+                <div class="oursocialmedia">
+                    <p>Our social Media accounts</p>
+                    <ul>
+                        <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook" style="font-size:50px ;"></i></a></li>
+                        <li><a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram" style="font-size:50px ;"></i></a></li>
+                        <li><a href=" https://twitter.com" target="_blank" ><i class="fa-brands fa-twitter" style="font-size:50px ;"></i></a></li>
+                    
+                    </ul>
+                </div>
+                <div class="goup">
+                    <a id="goup" href="#top" style="font-size: 30px;"><i class="fas fa-angle-up"></i></a>
+                    <a href="#top">Back to top</a>
+                </div>
+               
+            </div>
+        </div>
+        <script>
+             var select = document.getElementById('faqlist');
+           
+            function resetbox()
+            {
+                document.getElementById('faqlist').options[0].selected = 'selected';
+               
+            }
+                
+                
+                function showanswer()
+                {
+                    var value = select.options[select.selectedIndex].value;
+                switch(value)
+                {
+                    case "who are we":
+                       var answer= document.getElementById("faqanswer");
+                       answer.innerHTML="We are a vendor to many streaming services, allowing you to subscribe, and enjoy unlimeted content provided by our partners";
+                       answer.style.opacity=1;
+                       break;
+
+                       case "what do we offer":
+                       var answer= document.getElementById("faqanswer");
+                       answer.innerHTML="We provide you with easy access to content produced by multiple streaming services, and facilitate your subscribtion to them.";
+                       answer.style.opacity=1;
+                       break;
+
+                       case "How do i subscribe?":
+                       var answer= document.getElementById("faqanswer");
+                       answer.innerHTML="Want to subscribe? go to our <a href='project.html'> home page </a> and subscribe now!";
+                       answer.style.opacity=1;
+                       break;
+                }
+            }
+
+
+
+
+          var inimg=document.getElementById("infoimg");
+          var i=2;
+          
+        console.log(inimg);
+        inimg.src="assets/movies images/1.jpg";
+        setInterval(changeimg,2000)
+        function changeimg()
+        {
+            
+            if(i<6){
+            inimg.src="assets/movies images/"+i+".jpg";
+            i++;
+        }
+            else
+            {
+                inimg.src="assets/movies images/"+1+".jpg";
+            i=2;
+            }
+
+        }
+        function gohome()
+        {
+            window.open("project.html")
+        }
+
+
+      
+       
+        </script>
+    </body>
+</html>
